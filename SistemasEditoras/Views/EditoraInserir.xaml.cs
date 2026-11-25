@@ -37,6 +37,7 @@ public partial class EditoraInserir : ContentPage
 		{
 			Nome = nome,
 			Sigla = sigla,
+			Data = DataPicker.Date,
 			Observacoes = ObservacoesEditor.Text?.Trim() ?? string.Empty
 		};
 

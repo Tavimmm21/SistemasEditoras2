@@ -18,6 +18,12 @@ public class Editora
 	[Column("edobservacoes"), MaxLength(500), NotNull]
 	public string Observacoes { get; set; } = string.Empty;
 
+	// ALTERACAO OBRIGATORIA (comunicado): novo campo Data em tbleditoras.
+	// Sem [NotNull] de proposito: assim o sqlite-net consegue adicionar a coluna
+	// em um banco que ja existia (ALTER TABLE nao aceita NOT NULL sem valor padrao).
+	[Column("eddata")]
+	public DateTime Data { get; set; } = DateTime.Today;
+
 	// Somente exibicao (nao persistido)
 	[Ignore]
 	public bool TemObservacoes => !string.IsNullOrWhiteSpace(Observacoes);

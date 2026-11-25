@@ -15,6 +15,9 @@
             <Label Text="Sigla *" FontAttributes="Bold" Margin="0,8,0,0" />
             <Entry x:Name="SiglaEntry" Placeholder="Sigla da editora" MaxLength="25" />
 
+            <Label Text="Data *" FontAttributes="Bold" Margin="0,8,0,0" />
+            <DatePicker x:Name="DataPicker" Format="dd/MM/yyyy" />
+
             <Label Text="Observações" FontAttributes="Bold" Margin="0,8,0,0" />
             <Editor x:Name="ObservacoesEditor"
                     Placeholder="Observações (opcional)"

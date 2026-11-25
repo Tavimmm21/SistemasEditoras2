@@ -19,6 +19,11 @@ public partial class EditoraAlterar : ContentPage
 		NomeEntry.Text = editora.Nome;
 		SiglaEntry.Text = editora.Sigla;
 		ObservacoesEditor.Text = editora.Observacoes;
+
+		// Registros antigos (sem data) voltam como 01/01/0001, fora do limite do DatePicker.
+		DataPicker.Date = editora.Data >= DataPicker.MinimumDate && editora.Data <= DataPicker.MaximumDate
+			? editora.Data
+			: DateTime.Today;
 	}
 
 	private async void OnSalvarClicked(object? sender, EventArgs e)
@@ -42,6 +47,7 @@ public partial class EditoraAlterar : ContentPage
 
 		_editora.Nome = nome;
 		_editora.Sigla = sigla;
+		_editora.Data = DataPicker.Date;
 		_editora.Observacoes = ObservacoesEditor.Text?.Trim() ?? string.Empty;
 
 		try

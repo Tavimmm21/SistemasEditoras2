@@ -84,7 +84,7 @@ SistemasEditoras/
 
 | Tabela | Colunas |
 |---|---|
-| `tbleditoras` | `edid` (PK), `edinome` (50), `edisigla` (25), `edobservacoes` (500) |
+| `tbleditoras` | `edid` (PK), `edinome` (50), `edisigla` (25), `edobservacoes` (500), **`eddata`** (data — *alteração obrigatória do comunicado*) |
 | `tblautores` | `autid` (PK), `autnome` (50), `aupseudonimo` (50), `autobservacoes` (500) |
 | `tbllivros` | `livid` (PK), `livnome` (50), `livanopublicacao`, `livisbn` (decimal 14), `livobservacoes` (500), `edid` (FK), `autid` (FK) |
 

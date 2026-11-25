@@ -44,6 +44,7 @@ public partial class EditoraPrincipal : ContentPage
 			resultado = _todas.Where(e =>
 				Contem(e.Nome, termo) ||
 				Contem(e.Sigla, termo) ||
+				Contem(e.Data.ToString("dd/MM/yyyy"), termo) ||
 				Contem(e.Observacoes, termo));
 		}
 
