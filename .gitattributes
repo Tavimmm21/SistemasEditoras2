@@ -1,0 +1,7 @@
+* text=auto
+*.sln text eol=crlf
+*.cs text diff=csharp
+*.xaml text
+*.svg text
+*.png binary
+*.jpg binary

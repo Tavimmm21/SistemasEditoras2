@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SistemasEditoras.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SistemasEditoras"
+    xmlns:views="clr-namespace:SistemasEditoras.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True"
+    Title="Sistema Editoras">
+
+    <!-- Cabecalho do menu lateral: titulo do app (obrigatorio) -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource Primary}" HeightRequest="120" Padding="20">
+            <Label Text="📚 Sistema Editoras"
+                   TextColor="White"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Rodape do menu lateral: versao (obrigatorio) -->
+    <Shell.FlyoutFooter>
+        <Label Text="Versão 1.0"
+               TextColor="{StaticResource Gray500}"
+               HorizontalOptions="Center"
+               Margin="0,12" />
+    </Shell.FlyoutFooter>
+
+    <!-- Um unico FlyoutItem com varias Tabs: gera o menu lateral E a barra inferior -->
+    <FlyoutItem Title="Menu Principal" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"
+                          Route="MainPage" />
+        </Tab>
+        <Tab Title="Editoras">
+            <ShellContent ContentTemplate="{DataTemplate views:EditoraPrincipal}"
+                          Route="EditoraPrincipal" />
+        </Tab>
+        <Tab Title="Autores">
+            <ShellContent ContentTemplate="{DataTemplate views:AutorPrincipal}"
+                          Route="AutorPrincipal" />
+        </Tab>
+        <Tab Title="Livros">
+            <ShellContent ContentTemplate="{DataTemplate views:LivroPrincipal}"
+                          Route="LivroPrincipal" />
+        </Tab>
+        <Tab Title="Desenvolvedor">
+            <ShellContent ContentTemplate="{DataTemplate views:DadosDesenvolvedor}"
+                          Route="DadosDesenvolvedor" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

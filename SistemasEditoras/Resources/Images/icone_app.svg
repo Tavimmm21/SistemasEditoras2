@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="200" height="200" rx="40" ry="40" fill="#512BD4" />
+    <!-- Livro aberto (duas paginas) -->
+    <g fill="#FFFFFF">
+        <path d="M46 58 H92 C97 58 100 61 100 66 V142 C94 138 88 137 82 137 H46 Z" />
+        <path d="M154 58 H108 C103 58 100 61 100 66 V142 C106 138 112 137 118 137 H154 Z" />
+    </g>
+</svg>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SistemasEditoras.Views.EditoraInserir"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.TabBarIsVisible="False"
+    Title="Nova Editora">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Nome *" FontAttributes="Bold" />
+            <Entry x:Name="NomeEntry" Placeholder="Nome da editora" MaxLength="50" />
+
+            <Label Text="Sigla *" FontAttributes="Bold" Margin="0,8,0,0" />
+            <Entry x:Name="SiglaEntry" Placeholder="Sigla da editora" MaxLength="25" />
+
+            <Label Text="Observações" FontAttributes="Bold" Margin="0,8,0,0" />
+            <Editor x:Name="ObservacoesEditor"
+                    Placeholder="Observações (opcional)"
+                    MaxLength="500"
+                    HeightRequest="120" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,16,0,0">
+                <Button Grid.Column="0" Text="💾  Salvar" Clicked="OnSalvarClicked" />
+                <Button Grid.Column="1"
+                        Text="↩️  Voltar"
+                        BackgroundColor="{StaticResource Gray500}"
+                        Clicked="OnVoltarClicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

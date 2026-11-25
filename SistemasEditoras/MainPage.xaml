@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SistemasEditoras.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <Label Text="📚"
+                   FontSize="64"
+                   HorizontalOptions="Center"
+                   Margin="0,16,0,0" />
+
+            <Label Text="Sistema de Editoras"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Escolha uma opção"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,8" />
+
+            <Button Text="🏢  Editoras" Clicked="OnEditorasClicked" />
+            <Button Text="✍️  Autores" Clicked="OnAutoresClicked" />
+            <Button Text="📖  Livros" Clicked="OnLivrosClicked" />
+            <Button Text="👤  Dados do Desenvolvedor" Clicked="OnDesenvolvedorClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

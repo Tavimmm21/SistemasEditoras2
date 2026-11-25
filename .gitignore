@@ -1,0 +1,30 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Resultado de compilacao
+[Bb]in/
+[Oo]bj/
+*.log
+
+# Pacotes
+*.nupkg
+packages/
+
+# Android
+*.apk
+*.aab
+
+# Outras IDEs
+.idea/
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Zip de entrega do codigo-fonte
+*.zip

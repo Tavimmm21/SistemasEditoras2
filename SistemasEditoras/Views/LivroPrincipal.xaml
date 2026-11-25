@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SistemasEditoras.Views.LivroPrincipal"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Livros">
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="16" RowSpacing="12">
+
+        <SearchBar x:Name="BuscaSearchBar"
+                   Grid.Row="0"
+                   Placeholder="Pesquisar livro, autor ou editora"
+                   TextChanged="OnBuscaTextChanged" />
+
+        <Button Grid.Row="1"
+                Text="➕  Inserir"
+                Clicked="OnInserirClicked" />
+
+        <CollectionView x:Name="LivrosCollectionView"
+                        Grid.Row="2"
+                        SelectionMode="None">
+
+            <CollectionView.EmptyView>
+                <Label Text="Nenhum livro encontrado."
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource Card}">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding Nome}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding AutorNome, StringFormat='Autor: {0}'}" />
+                            <Label Text="{Binding EditoraNome, StringFormat='Editora: {0}'}" />
+                            <Label Text="{Binding AnoPublicacao, StringFormat='Ano de publicação: {0}'}" />
+                            <Label Text="{Binding Isbn, StringFormat='ISBN: {0:0}'}" />
+                            <Label Text="{Binding Observacoes, StringFormat='Obs.: {0}'}"
+                                   IsVisible="{Binding TemObservacoes}" />
+
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Margin="0,8,0,0">
+                                <Button Grid.Column="0"
+                                        Text="✏️  Alterar"
+                                        Clicked="OnAlterarClicked" />
+                                <Button Grid.Column="1"
+                                        Text="🗑️  Excluir"
+                                        BackgroundColor="{StaticResource Danger}"
+                                        Clicked="OnExcluirClicked" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
